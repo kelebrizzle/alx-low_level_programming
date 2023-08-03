@@ -1,0 +1,1 @@
+Bit manipulation school project
