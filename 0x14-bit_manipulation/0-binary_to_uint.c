@@ -2,18 +2,18 @@
 #include <stddef.h>
 
 /**
- * exp - finds the exponient of a number
+ * expo - finds the exponient of a number
  * @i: number
  * @j: number
  * Return: result
 */
 
-int exp(unsigned int i, unsigned int j)
+int expo(unsigned int i, unsigned int j)
 {
-	unsigned int z, n;
+	unsigned int k, n;
 
 	n = 1;
-	for (z = 0; z < j; z++)
+	for (k = 0; k < j; k++)
 	{
 		n *= i;
 	}
@@ -28,7 +28,7 @@ int exp(unsigned int i, unsigned int j)
 unsigned int binary_to_uint(const char *b)
 {
 	int i;
-	unsigned int j, z;
+	unsigned int j, k;
 
 	i = 0;
 	j = 0;
@@ -46,15 +46,15 @@ unsigned int binary_to_uint(const char *b)
 		i++;
 	}
 
-	z = 0;
+	k = 0;
 	while (i > 0)
 	{
 		i--;
 		if (b[i] == 49)
 		{
-			j = j + (1 * exp(2, z));
+			j = j + (1 * expo(2, k));
 		}
-		z++;
+		k++;
 	}
 	return (j);
 }
