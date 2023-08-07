@@ -206,7 +206,7 @@ int check_elf(char *ptr)
 */
 int main(int argc, char *argv[])
 {
-	int fildes, ret_read;
+	int fd, ret_read;
 	char ptr[27];
 
 	if (argc != 2)
@@ -215,7 +215,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	fildes = open(argv[1], O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 
 	if (fd < 0)
 	{
@@ -223,8 +223,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	lseek(fildes, 0, SEEK_SET);
-	ret_read = read(fildes, ptr, 27);
+	lseek(fd, 0, SEEK_SET);
+	ret_read = read(fd, ptr, 27);
 
 	if (ret_read == -1)
 	{
@@ -239,7 +239,7 @@ int main(int argc, char *argv[])
 	}
 
 	check_sys(ptr);
-	close(fildes);
+	close(fd);
 
 	return (0);
 }
