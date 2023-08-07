@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	int fd_input, fd_output, read_count, write_count, close_input, close_output;
+	int fd_input, fd_output, r_count, w_count, close_input, close_output;
 	char buff[1024];
 
 	if (argc != 3)
