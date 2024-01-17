@@ -1,1 +1,0 @@
-ALX Search Algorithm project
